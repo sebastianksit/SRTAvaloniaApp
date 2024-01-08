@@ -1,0 +1,132 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:i="https://github.com/projektanker/icons.avalonia"
+        xmlns:vm="using:AvaApp.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
+        x:Class="AvaApp.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="AvaApp"
+		Background="White">
+	
+	<Grid ShowGridLines="False">
+		<!-- Grid Layout -->
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="85"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+		</Grid.RowDefinitions>
+		<!-- Top Screen -->
+		<Rectangle Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0" Fill="#E7E7E7"></Rectangle>
+		<Image Grid.Row="0" Grid.Column="0" Source="C:\Users\sebas\source\repos\AvaApp\AvaApp\Assets\StreamlineRT.png" HorizontalAlignment="Left"></Image>
+		<TextBlock Grid.Row="0" Grid.Column="3" FontSize="20" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,15,0,0">VLM Status: Online</TextBlock>
+		<TextBlock Grid.Row="0" Grid.Column="3" FontSize="20" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,15">Server Status: Online</TextBlock>
+		<Button i:Attached.Icon="fa-lock" FontSize="30" BorderThickness="1" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Right" Foreground="Black" Background="#E7E7E7" VerticalAlignment="Center" Width="65" Height="65" Margin="0,0,0,0"></Button>
+		<!-- Middle Screen -->
+		<Button Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Foreground="Black" Background="#e7e7e7" Margin="10" HorizontalAlignment="Left" i:Attached.Icon="fa.bars" FontSize="20" Width="50" Height="50">
+		</Button>
+		<SplitView IsPaneOpen="False"
+				   OpenPaneLength="400"
+				   CompactPaneLength="60"
+			       DisplayMode="Overlay"
+			       Background="Transparent"
+				   Foreground="Black"
+			       CornerRadius="10"
+			       Margin="5"
+				   Grid.Row="1"
+				   Grid.RowSpan="2"
+				   PaneBackground="#e7e7e7">
+			
+			<SplitView.Pane>
+				<StackPanel Spacing="10" Margin="0">
+
+					<ListBox Background="#E7e7e7" Foreground="Black">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"></ColumnDefinition>
+								<ColumnDefinition Width="*"></ColumnDefinition>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="50"></RowDefinition>
+								<RowDefinition Height="50"></RowDefinition>
+								<RowDefinition Height="50"></RowDefinition>
+								<RowDefinition Height="50"></RowDefinition>
+								<RowDefinition Height="50"></RowDefinition>
+								<RowDefinition Height="50"></RowDefinition>
+								<RowDefinition Height="50"></RowDefinition>
+								<RowDefinition Height="50"></RowDefinition>
+								<RowDefinition Height="50"></RowDefinition>
+								<RowDefinition Height="50"></RowDefinition>
+								<RowDefinition Height="50"></RowDefinition>
+							</Grid.RowDefinitions>
+							<ListBoxItem i:Attached.Icon="fa.house" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" ></ListBoxItem>
+							<TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-50,0,0,0">Home</TextBlock>
+
+							<ListBoxItem i:Attached.Icon="fa.barcode" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25"></ListBoxItem>
+							<TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-50,0,0,0">Barcode Scan</TextBlock>
+
+							<ListBoxItem i:Attached.Icon="fa.box" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25"></ListBoxItem>
+							<TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-50,0,0,0">Shipping</TextBlock>
+
+							<ListBoxItem i:Attached.Icon="fa.box-open" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25"></ListBoxItem>
+							<TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-50,0,0,0">Receiving</TextBlock>
+
+							<ListBoxItem i:Attached.Icon="fa.plane-departure" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25"></ListBoxItem>
+							<TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-50,0,0,0">Departing</TextBlock>
+
+							<ListBoxItem i:Attached.Icon="fa.plane-arrival" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25"></ListBoxItem>
+							<TextBlock Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-50,0,0,0">Arriving</TextBlock>
+
+							<ListBoxItem i:Attached.Icon="fa.pallet" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25"></ListBoxItem>
+							<TextBlock Grid.Row="6" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-50,0,0,0">Pallets</TextBlock>
+
+							<ListBoxItem i:Attached.Icon="fa.truck" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25"></ListBoxItem>
+							<TextBlock Grid.Row="7" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-50,0,0,0">Inbound Orders</TextBlock>
+
+							<ListBoxItem i:Attached.Icon="fa.warehouse" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25"></ListBoxItem>
+							<TextBlock Grid.Row="8" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-50,0,0,0">Warehouse</TextBlock>
+
+							<ListBoxItem i:Attached.Icon="fa.user" Grid.Row="9" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25"></ListBoxItem>
+							<TextBlock Grid.Row="9" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-50,0,0,0">Users</TextBlock>
+
+							<ListBoxItem i:Attached.Icon="fa.cog" Grid.Row="10" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25"></ListBoxItem>
+							<TextBlock Grid.Row="10" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="-50,0,0,0">Settings</TextBlock>
+						</Grid>
+					</ListBox>
+				</StackPanel>
+			</SplitView.Pane>
+			<SplitView.Content>
+			</SplitView.Content>
+		</SplitView>
+		
+		<StackPanel Margin="20" Grid.Row="1" Grid.Column="1">
+			<TextBlock Margin="5" FontSize="20" FontWeight="Bold" Foreground="Black">Task Overview:</TextBlock>
+			<ListBox Background="#e7e7e7" Foreground="Black"> Task 1</ListBox>
+			<ListBox Background="#e7e7e7" Foreground="Black"> Task 2</ListBox>
+			<ListBox Background="#e7e7e7" Foreground="Black"> Task 3</ListBox>
+			<ListBox Background="#e7e7e7" Foreground="Black"> Task 4</ListBox>
+			<ListBox Background="#e7e7e7" Foreground="Black"> Task 5</ListBox>
+			<ListBox Background="#e7e7e7" Foreground="Black"> Task 6</ListBox>
+			<ListBox Background="#e7e7e7" Foreground="Black"> Task 7</ListBox>
+			<ListBox Background="#e7e7e7" Foreground="Black"> Task 8</ListBox>
+			<ListBox Background="#e7e7e7" Foreground="Black"> Task 9</ListBox>
+			<ListBox Background="#e7e7e7" Foreground="Black"> Task 10</ListBox>
+		</StackPanel>
+
+		<StackPanel Margin="20" Grid.Row="2" Grid.Column="1">
+			<TextBlock Margin="5" FontSize="20" FontWeight="Bold" Foreground="Black">Completed Tasks:</TextBlock>
+			<ListBox Background="#e7e7e7" Foreground="Black"> Task 12</ListBox>
+			<ListBox Background="#e7e7e7" Foreground="Black"> Task 32</ListBox>
+			<ListBox Background="#e7e7e7" Foreground="Black"> Task 16</ListBox>
+		</StackPanel>
+		
+		<Image Grid.Row="1" Grid.RowSpan="3" Grid.Column="2" Source="C:\Users\sebas\source\repos\AvaApp\AvaApp\Assets\modula_vlm.png" Margin="10"></Image>
+		<TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" FontSize="15" FontWeight="Bold">Version 1.0</TextBlock>
+	</Grid>
+</Window>

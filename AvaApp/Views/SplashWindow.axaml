@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:vm="using:AvaApp.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaApp.SplashWindow"
+        Title="SplashWindow"
+		Width="500"
+		Height="350"
+		SystemDecorations="None"
+		WindowStartupLocation="CenterScreen"
+		Background="#E7E7E7">
+	<Grid ShowGridLines="True">
+		<!-- Grid Layout -->
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="85"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+		</Grid.RowDefinitions>
+		<Image Grid.Column="1" Width="400" Height="100" Margin="10" Source="C:\Users\sebas\source\repos\AvaApp\AvaApp\Assets\StreamlineRT.png"></Image>
+		<TextBlock Grid.Row="2" Grid.Column="1" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+		<ProgressBar  Margin="10" Height="20" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom"
+					  Minimum="0" Maximum="100" Value="14"
+					  ShowProgressText="True" Foreground="Red" Background="White"/>
+	</Grid>
+</Window>
